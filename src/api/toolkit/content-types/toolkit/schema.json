@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "toolkits",
+  "info": {
+    "singularName": "toolkit",
+    "pluralName": "toolkits",
+    "displayName": "toolkit"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "price": {
+      "type": "string"
+    },
+    "available": {
+      "type": "boolean"
+    }
+  }
+}

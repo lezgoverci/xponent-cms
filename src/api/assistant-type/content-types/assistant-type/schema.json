@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "assistant_types",
+  "info": {
+    "singularName": "assistant-type",
+    "pluralName": "assistant-types",
+    "displayName": "assistant-type"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}

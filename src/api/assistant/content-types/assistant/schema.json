@@ -1,0 +1,73 @@
+{
+  "kind": "collectionType",
+  "collectionName": "assistants",
+  "info": {
+    "singularName": "assistant",
+    "pluralName": "assistants",
+    "displayName": "assistant",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "purpose": {
+      "type": "text"
+    },
+    "avatar": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "foundation_model": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::foundation-model.foundation-model"
+    },
+    "toolkits": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::toolkit.toolkit"
+    },
+    "storage": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::storage.storage"
+    },
+    "retrievals": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::retrieval.retrieval"
+    },
+    "deployment_channels": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::deployment-channel.deployment-channel"
+    },
+    "training_data": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::training-data.training-data"
+    },
+    "apps": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::app.app"
+    },
+    "assistant_type": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::assistant-type.assistant-type"
+    }
+  }
+}

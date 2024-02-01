@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "deployment_channels",
+  "info": {
+    "singularName": "deployment-channel",
+    "pluralName": "deployment-channels",
+    "displayName": "deployment-channel",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "deployment_options": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::deployment-option.deployment-option"
+    }
+  }
+}

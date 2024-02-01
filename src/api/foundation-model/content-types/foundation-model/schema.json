@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "foundation_models",
+  "info": {
+    "singularName": "foundation-model",
+    "pluralName": "foundation-models",
+    "displayName": "foundation-model"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "company": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "available": {
+      "type": "boolean"
+    },
+    "price": {
+      "type": "string"
+    }
+  }
+}

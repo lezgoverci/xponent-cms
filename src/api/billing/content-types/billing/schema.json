@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "billings",
+  "info": {
+    "singularName": "billing",
+    "pluralName": "billings",
+    "displayName": "billing",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "account": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::account.account",
+      "inversedBy": "billing"
+    },
+    "total": {
+      "type": "float"
+    },
+    "used": {
+      "type": "float"
+    },
+    "sponsorship": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::sponsorship.sponsorship"
+    }
+  }
+}

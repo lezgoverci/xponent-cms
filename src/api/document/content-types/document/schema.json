@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "documents",
+  "info": {
+    "singularName": "document",
+    "pluralName": "documents",
+    "displayName": "document",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "drive": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::drive.drive",
+      "inversedBy": "documents"
+    }
+  }
+}
