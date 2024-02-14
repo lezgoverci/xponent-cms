@@ -20,6 +20,22 @@
       "relation": "manyToMany",
       "target": "api::thread.thread",
       "inversedBy": "members"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "nickname": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "human",
+        "assistant",
+        "system"
+      ]
     }
   }
 }

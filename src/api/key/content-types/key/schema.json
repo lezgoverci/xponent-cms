@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "keys",
+  "info": {
+    "singularName": "key",
+    "pluralName": "keys",
+    "displayName": "key"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "value": {
+      "type": "text"
+    },
+    "organization": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::organization.organization",
+      "inversedBy": "keys"
+    }
+  }
+}
