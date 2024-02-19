@@ -1138,6 +1138,7 @@ export interface ApiDeploymentOptionDeploymentOption
     singularName: 'deployment-option';
     pluralName: 'deployment-options';
     displayName: 'deployment-option';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1146,6 +1147,12 @@ export interface ApiDeploymentOptionDeploymentOption
     name: Attribute.String;
     description: Attribute.String;
     available: Attribute.Boolean;
+    deployment_channel: Attribute.Relation<
+      'api::deployment-option.deployment-option',
+      'manyToOne',
+      'api::deployment-channel.deployment-channel'
+    >;
+    link: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1243,6 +1250,7 @@ export interface ApiFoundationModelFoundationModel
     singularName: 'foundation-model';
     pluralName: 'foundation-models';
     displayName: 'foundation-model';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1253,6 +1261,7 @@ export interface ApiFoundationModelFoundationModel
     description: Attribute.String;
     available: Attribute.Boolean;
     price: Attribute.String;
+    license: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1516,6 +1525,7 @@ export interface ApiRetrievalRetrieval extends Schema.CollectionType {
     singularName: 'retrieval';
     pluralName: 'retrievals';
     displayName: 'retrieval';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1524,6 +1534,7 @@ export interface ApiRetrievalRetrieval extends Schema.CollectionType {
     name: Attribute.String;
     price: Attribute.String;
     available: Attribute.Boolean;
+    rate: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1580,6 +1591,7 @@ export interface ApiStorageStorage extends Schema.CollectionType {
     singularName: 'storage';
     pluralName: 'storages';
     displayName: 'storage';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1589,6 +1601,8 @@ export interface ApiStorageStorage extends Schema.CollectionType {
     price: Attribute.String;
     capacity: Attribute.String;
     available: Attribute.Boolean;
+    unit: Attribute.String;
+    rate: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1653,6 +1667,7 @@ export interface ApiToolkitToolkit extends Schema.CollectionType {
     singularName: 'toolkit';
     pluralName: 'toolkits';
     displayName: 'toolkit';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1661,6 +1676,7 @@ export interface ApiToolkitToolkit extends Schema.CollectionType {
     name: Attribute.String;
     price: Attribute.String;
     available: Attribute.Boolean;
+    rate: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

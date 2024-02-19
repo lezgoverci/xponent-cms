@@ -4,7 +4,8 @@
   "info": {
     "singularName": "deployment-option",
     "pluralName": "deployment-options",
-    "displayName": "deployment-option"
+    "displayName": "deployment-option",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -19,6 +20,15 @@
     },
     "available": {
       "type": "boolean"
+    },
+    "deployment_channel": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::deployment-channel.deployment-channel",
+      "inversedBy": "deployment_options"
+    },
+    "link": {
+      "type": "string"
     }
   }
 }

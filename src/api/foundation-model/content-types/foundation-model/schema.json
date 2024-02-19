@@ -4,7 +4,8 @@
   "info": {
     "singularName": "foundation-model",
     "pluralName": "foundation-models",
-    "displayName": "foundation-model"
+    "displayName": "foundation-model",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -24,6 +25,9 @@
       "type": "boolean"
     },
     "price": {
+      "type": "string"
+    },
+    "license": {
       "type": "string"
     }
   }

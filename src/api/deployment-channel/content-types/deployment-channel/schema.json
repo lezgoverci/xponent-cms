@@ -21,7 +21,8 @@
     "deployment_options": {
       "type": "relation",
       "relation": "oneToMany",
-      "target": "api::deployment-option.deployment-option"
+      "target": "api::deployment-option.deployment-option",
+      "mappedBy": "deployment_channel"
     }
   }
 }

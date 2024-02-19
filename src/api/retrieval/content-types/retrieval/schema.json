@@ -4,7 +4,8 @@
   "info": {
     "singularName": "retrieval",
     "pluralName": "retrievals",
-    "displayName": "retrieval"
+    "displayName": "retrieval",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -19,6 +20,9 @@
     },
     "available": {
       "type": "boolean"
+    },
+    "rate": {
+      "type": "string"
     }
   }
 }

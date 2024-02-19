@@ -4,7 +4,8 @@
   "info": {
     "singularName": "toolkit",
     "pluralName": "toolkits",
-    "displayName": "toolkit"
+    "displayName": "toolkit",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -19,6 +20,9 @@
     },
     "available": {
       "type": "boolean"
+    },
+    "rate": {
+      "type": "string"
     }
   }
 }
