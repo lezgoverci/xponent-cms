@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "sessions",
+  "info": {
+    "singularName": "session",
+    "pluralName": "sessions",
+    "displayName": "session",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "session_uid": {
+      "type": "uid"
+    },
+    "session_messages": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::session-message.session-message",
+      "mappedBy": "session"
+    },
+    "organization": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::organization.organization"
+    },
+    "assistant": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::assistant.assistant"
+    }
+  }
+}

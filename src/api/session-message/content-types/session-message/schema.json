@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "session_messages",
+  "info": {
+    "singularName": "session-message",
+    "pluralName": "session-messages",
+    "displayName": "session message"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "role": {
+      "type": "string"
+    },
+    "content": {
+      "type": "text"
+    },
+    "session": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::session.session",
+      "inversedBy": "session_messages"
+    }
+  }
+}

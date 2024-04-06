@@ -68,6 +68,21 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::assistant-type.assistant-type"
+    },
+    "instructions": {
+      "type": "text"
+    },
+    "organization": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::organization.organization",
+      "inversedBy": "assistants"
+    },
+    "model": {
+      "type": "string"
+    },
+    "tools": {
+      "type": "json"
     }
   }
 }

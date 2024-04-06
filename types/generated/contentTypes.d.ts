@@ -931,6 +931,14 @@ export interface ApiAssistantAssistant extends Schema.CollectionType {
       'oneToOne',
       'api::assistant-type.assistant-type'
     >;
+    instructions: Attribute.Text;
+    organization: Attribute.Relation<
+      'api::assistant.assistant',
+      'manyToOne',
+      'api::organization.organization'
+    >;
+    model: Attribute.String;
+    tools: Attribute.JSON;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1438,6 +1446,7 @@ export interface ApiOrganizationOrganization extends Schema.CollectionType {
     singularName: 'organization';
     pluralName: 'organizations';
     displayName: 'organization';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1465,6 +1474,12 @@ export interface ApiOrganizationOrganization extends Schema.CollectionType {
       'oneToMany',
       'api::key.key'
     >;
+    assistants: Attribute.Relation<
+      'api::organization.organization',
+      'oneToMany',
+      'api::assistant.assistant'
+    >;
+    organization_uid: Attribute.UID;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1546,6 +1561,88 @@ export interface ApiRetrievalRetrieval extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::retrieval.retrieval',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSessionSession extends Schema.CollectionType {
+  collectionName: 'sessions';
+  info: {
+    singularName: 'session';
+    pluralName: 'sessions';
+    displayName: 'session';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    session_uid: Attribute.UID;
+    session_messages: Attribute.Relation<
+      'api::session.session',
+      'oneToMany',
+      'api::session-message.session-message'
+    >;
+    organization: Attribute.Relation<
+      'api::session.session',
+      'oneToOne',
+      'api::organization.organization'
+    >;
+    assistant: Attribute.Relation<
+      'api::session.session',
+      'oneToOne',
+      'api::assistant.assistant'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::session.session',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::session.session',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiSessionMessageSessionMessage extends Schema.CollectionType {
+  collectionName: 'session_messages';
+  info: {
+    singularName: 'session-message';
+    pluralName: 'session-messages';
+    displayName: 'session message';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    role: Attribute.String;
+    content: Attribute.Text;
+    session: Attribute.Relation<
+      'api::session-message.session-message',
+      'manyToOne',
+      'api::session.session'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::session-message.session-message',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::session-message.session-message',
       'oneToOne',
       'admin::user'
     > &
@@ -1762,6 +1859,8 @@ declare module '@strapi/types' {
       'api::organization.organization': ApiOrganizationOrganization;
       'api::project.project': ApiProjectProject;
       'api::retrieval.retrieval': ApiRetrievalRetrieval;
+      'api::session.session': ApiSessionSession;
+      'api::session-message.session-message': ApiSessionMessageSessionMessage;
       'api::sponsorship.sponsorship': ApiSponsorshipSponsorship;
       'api::storage.storage': ApiStorageStorage;
       'api::thread.thread': ApiThreadThread;
